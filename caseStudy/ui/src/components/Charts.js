@@ -13,7 +13,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-
+//Hello
 import React from 'react';
 import LineChart from './charts/LineChart';
 
@@ -37,7 +37,7 @@ class Charts extends React.Component {
 
     dataSourceHelper(props) {
         props = props || this.props;
-        
+
         /**
          * TODO
          * Write a helper method to make an AJAX HTTP request to your service for the
@@ -75,7 +75,7 @@ class Charts extends React.Component {
          *  Don't forget to bind the helper method in the constructor!
          * */
 }
-    
+
     render() {
         /**
          * TODO
