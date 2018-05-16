@@ -1,4 +1,4 @@
-/**
+4/**
  * Copyright 2018 Goldman Sachs.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,12 +15,28 @@
  */
 
 package resources;
+import java.util.*;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
-// TODO - add your @Path here
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import java.io.IOException;
+import java.util.List;
+
+
+@Path("graph")
 public class StockResource {
 
     // TODO - Add a @GET resource to get stock data
     // Your service should return data based on 3 inputs
     // Stock ticker, start date and end date
 
+    @GET
+    @Path("{name}/{startDate}/{endDate}")
+    public List<Double> getPrices(Stock stockInstance, String name, String startDate, String endDate) {
+        return stockInstance.getPricesInRange(name, startDate, endDate);
+    }
 }
