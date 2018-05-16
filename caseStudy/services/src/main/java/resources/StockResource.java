@@ -16,6 +16,7 @@
 
 package resources;
 
+@Path ()
 // TODO - add your @Path here
 public class StockResource {
 
