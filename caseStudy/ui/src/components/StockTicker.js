@@ -47,7 +47,8 @@
  */
 
 import React from 'react';
-//import {Typeahead} from 'react-bootstrap-typeahead'; UNCOMMENT this line if you are using the react-bootstrap-typeeahead component
+//import {Typeahead} from 'react-bootstrap-typeahead';
+//import TextInput from 'TextInput';
 
 /* If you chose to use react-boostrap-typeahead, look at AsyncTypeahead for a component that 
  * provides auto-complete suggestions as you type. This would require adding a search handler 
@@ -59,7 +60,7 @@ class StockTicker extends React.Component {
 
     /**
      * TODO
-     * Prefetch the data required to display options fo the typeahead component. Initialize a state array with
+     * Prefetch the data required to display options for the typeahead component. Initialize a state array with
      * this data and pass it via props to the typeahead component that will be rendered.
      * https://github.com/ericgio/react-bootstrap-typeahead/blob/master/docs/Data.md
      * e.g.
@@ -71,18 +72,19 @@ class StockTicker extends React.Component {
      * If you are having difficulty with this, you may hard code the options array from the company data provided for the
      * services.
      */
+    // prop = {showCompanyInfo: true, symbol: 'GM', name: "Goldman", city: "New York", state : "New York", sector : "business", industry : "tech"};
     constructor(props) {
         super(props);
         this.state = {
-            showcompanyinfo: false, //TODO: Use this boolean to determine if the company information should be rendered
+            showcompanyinfo: false, //Use this boolean to determine if the company information should be rendered
             company : {
-                symbol: '',
-                name: '',
+                symbol: '', 
+                name: '' ,
                 city: '',
                 state: '',
                 sector: '',
-                industry: ''
-            }
+                industry: '',
+            },
             /**
              * TODO
              * Add any additional state to pass via props to the typeahead component.
@@ -103,15 +105,17 @@ class StockTicker extends React.Component {
              * to handle errors). If you successfully retrieve this information, you can set the state objects
              * and render it.
              */
-            this.setState({showinfo: true});
+
+            this.setState({showcompanyinfo: true});
 
             //this.props.onChange(..);  Call this.props.onChange with the selected symbol to propagate it
             // to the App component, which will handle it via its own onChane prop,
             // ultimately  used to fetch the data for the LineChart component.
+            this.props.onChange();
 
         }
         else {
-            this.setState({showinfo: false});
+            this.setState({showcompanyinfo: false});
             this.props.onChange(undefined);
         }
     }
@@ -128,36 +132,19 @@ class StockTicker extends React.Component {
          */
 
         return (
-            <div className="stockticker">
-                <div className="ticker-input">
-                    <p><strong>Stock Ticker</strong></p>
-                    <div className="stockticker-typeahead">
-                        {/* useful props if you decide to use react-bootstrap-typeahead
-                        <Typeahead
-                             align=
-                             filterBy=
-                             labelKey=
-                             onChange={this.handleChange}
-                             minLength=
-                             placeholder="Company Name/Ticker"
-                             options=
-                        />
-                        */}
+                <div className="stockticker">
+                    <div className="ticker-input">
+                        <p><strong>Stock Ticker</strong></p>
+                        
                     </div>
+                    
+                 
+                        <input type='text' name='title' value={this.state.title}
+                        onChange={this.handleChange.bind(this)}/>
+
                 </div>
-                {
-                    /**
-                     *  TODO
-                     *  Create a div element that shows a company information when the ticker changes. You will need to use a conditional here
-                     *  to help control rendering and pass these states as props to the component. This conditional can
-                     *  be maintained as a state object.
-                     *  http://reactpatterns.com/#conditional-rendering
-                     */
-                }
-            </div>
-        );
-    }
-
+                  //this.state.showcompanyinfo ? <h1>(this.state.value)</h1> : <h1></h1>
+                );
+            }
 }
-
-//Don't forget to export your component!
+export default StockTicker;

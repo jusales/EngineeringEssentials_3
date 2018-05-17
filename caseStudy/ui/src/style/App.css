@@ -14,10 +14,24 @@
  * under the License.
  */
 
+ .button__container {
+  margin-top: 200px;
+  text-align: center;
+}
+.button {
+  background-color:green;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 40px;
+  width: 200px;
+}
 
 .date {
   display: flex;
   flex-direction:row;
+  height: 40px;
+  width: 200px;
 }
 .date-input {
   margin-left: 1em;
