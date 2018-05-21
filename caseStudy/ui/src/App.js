@@ -16,6 +16,9 @@
 
 import React from 'react';
 import './style/App.css';
+import Charts from './components/Charts';
+import Date from './components/Date';
+import StockTicker from './components/StockTicker';
 
 /**
  * TODO:
@@ -24,6 +27,7 @@ import './style/App.css';
 
 
 class App extends React.Component{
+
     constructor(props) {
         super(props);
         this.state = {
@@ -31,6 +35,8 @@ class App extends React.Component{
              * TODO
              * Add state objects for the user inputs and anything else you may need to render the highchart.
              */
+            startData : props.startData,
+            endDate : props.endDate,
         };
 
     }
@@ -51,22 +57,15 @@ class App extends React.Component{
                * These props methods should set state and help determine if the
                * highchart should be displayed by changing the state of that boolean.
                * Don't forget to bind these methods!
-               */}
+               */
+              <StockTicker/>
+              }
 
                 <div className="date-range">
-
+                <Date text = " Start Date"/>
+                <Date text = " End Date"/>
                 </div>
               </div>
-
-
-                 {/**
-                   *  TODO
-                   *  Create a div element that shows a highchart when the ticker, start date, end date
-                   *  states ALL have values and nothing (null) otherwise. You will need to use a conditional here
-                   *  to help control rendering and pass these states as props to the component. This conditional can
-                   *  be maintained as a state object.
-                   *  http://reactpatterns.com/#conditional-rendering
-                   */}
 
           </div>
       );
