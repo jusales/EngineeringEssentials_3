@@ -4,9 +4,7 @@ There is no contribution agreement in place, so we are not accepting external pu
 
 # Engineering Essentials
 
-Goldman Sachs Engineering Essentials is a four day program designed to help current college sophomores develop the essential skills and tools to prepare for a successful career as a software engineer.
-
-Read more at http://www.goldmansachs.com/careers/students/programs/americas/engineering-essentials.html
+Engineering Essentials is a four day program designed to help current college sophomores develop the essential skills and tools to prepare for a successful career as a software engineer.
 
 ## Technical Curriculum
 
